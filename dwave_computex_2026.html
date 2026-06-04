@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D-Wave × Computex 2026 洽談策略</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --bg: #F5F6FA;
+    --surface: #ffffff;
+    --border: #E4E7F0;
+    --border-hover: #C8CDE0;
+    --text-primary: #0F1523;
+    --text-secondary: #5A6480;
+    --text-muted: #9BA3BE;
+
+    --blue: #1A56F0;
+    --blue-light: #EBF0FF;
+    --blue-mid: #4D79F5;
+    --green: #0DAF7A;
+    --green-light: #E6FAF4;
+    --amber: #F59E0B;
+    --amber-light: #FEF3C7;
+    --coral: #F05252;
+    --coral-light: #FEF0F0;
+    --purple: #7C3AED;
+    --purple-light: #F0EEFF;
+    --teal: #0891B2;
+    --teal-light: #E0F5FB;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 2rem;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-badge {
+    width: 36px; height: 36px;
+    background: var(--blue);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .logo-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+  .logo-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .stat-pill {
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 99px;
+    letter-spacing: 0.01em;
+  }
+  .date-pill {
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 2rem;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .eyebrow-dot {
+    width: 8px; height: 8px;
+    background: var(--blue);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .eyebrow-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--blue);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+  .hero h1 span { color: var(--blue); }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 24px;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .hero-stat { }
+  .hero-stat-num {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .tip-card {
+    background: var(--blue-light);
+    border: 1px solid #C5D4FC;
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    max-width: 280px;
+  }
+  .tip-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--blue-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .tip-text {
+    font-size: 13px;
+    color: #1E3A8A;
+    line-height: 1.55;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* ── FILTERS ── */
+  .filters-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .filters-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-right: 4px;
+  }
+  .filter-btn {
+    padding: 7px 16px;
+    border-radius: 99px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .filter-btn:hover {
+    border-color: var(--blue-mid);
+    color: var(--blue);
+    background: var(--blue-light);
+  }
+  .filter-btn.active {
+    background: var(--blue);
+    color: white;
+    border-color: var(--blue);
+    font-weight: 500;
+  }
+
+  /* ── CARD GRID ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    cursor: pointer;
+    animation: fadeUp 0.4s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .card:hover {
+    border-color: var(--blue-mid);
+    box-shadow: 0 8px 32px rgba(26,86,240,0.08);
+    transform: translateY(-2px);
+  }
+  .card.open {
+    border-color: var(--blue);
+    box-shadow: 0 12px 40px rgba(26,86,240,0.12);
+  }
+
+  .card-top {
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .card-identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .avatar {
+    width: 44px; height: 44px;
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600;
+    flex-shrink: 0;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0;
+  }
+  .card-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+  .card-sector { font-size: 12px; color: var(--text-muted); }
+  .badge-group { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+  .priority-badge {
+    font-size: 11px; font-weight: 500;
+    padding: 3px 10px; border-radius: 99px;
+  }
+  .pri-high { background: #FEF0F0; color: #C81E1E; }
+  .pri-med { background: #FEF3C7; color: #92400E; }
+
+  .sector-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+  }
+
+  .hook-box {
+    background: var(--bg);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .hook-box p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .tag {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    background: var(--bg);
+  }
+
+  /* ── EXPAND TOGGLE ── */
+  .card-toggle {
+    width: 100%;
+    padding: 10px 1.25rem;
+    border: none;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background 0.15s;
+  }
+  .card-toggle:hover { background: var(--blue-light); }
+  .toggle-arrow {
+    font-size: 12px;
+    transition: transform 0.25s;
+    display: inline-block;
+  }
+  .card.open .toggle-arrow { transform: rotate(180deg); }
+
+  /* ── DETAIL ── */
+  .card-detail {
+    display: none;
+    border-top: 1px solid var(--border);
+    animation: slideDown 0.25s ease;
+  }
+  @keyframes slideDown {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .card.open .card-detail { display: block; }
+
+  .detail-sections {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .detail-section { }
+  .detail-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .detail-label::before {
+    content: '';
+    display: inline-block;
+    width: 3px; height: 12px;
+    border-radius: 2px;
+    background: var(--blue);
+    flex-shrink: 0;
+  }
+  .detail-body {
+    font-size: 13.5px;
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+
+  .bottleneck-box {
+    background: #FFF8F0;
+    border: 1px solid #FCD9A0;
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+  }
+  .bottleneck-box .detail-body { color: #7C4A00; }
+
+  .angle-box {
+    background: var(--blue-light);
+    border: 1px solid #C5D4FC;
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+  }
+  .angle-box .detail-label::before { background: var(--blue-mid); }
+  .angle-box .detail-body { color: #1E3A8A; }
+
+  .poc-box {
+    background: var(--green-light);
+    border: 1px solid #A7F3D0;
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+  }
+  .poc-box .detail-label::before { background: var(--green); }
+  .poc-box .detail-body { color: #064E3B; }
+
+  .opening-box {
+    background: var(--purple-light);
+    border: 1px solid #DDD6FE;
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+  }
+  .opening-box .detail-label::before { background: var(--purple); }
+  .opening-line-text {
+    font-size: 13.5px;
+    color: #3B1F8C;
+    line-height: 1.65;
+    font-style: italic;
+  }
+  .opening-box .detail-label { color: #7C3AED; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    margin-top: 4rem;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    padding: 1.5rem 2rem;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-text { font-size: 12px; color: var(--text-muted); }
+  .footer-right {
+    display: flex; gap: 12px;
+  }
+  .footer-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 99px;
+    background: var(--bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-cta { display: none; }
+    .hero h1 { font-size: 26px; }
+    .hero-stats { flex-wrap: wrap; gap: 16px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .main { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo-badge">⚛</div>
+      <div>
+        <div class="logo-text">D-Wave Pitch Guide</div>
+        <div class="logo-sub">Computex 2026 · 台北南港展覽館</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="stat-pill">▲ 314% YoY 使用成長</span>
+      <span class="date-pill">June 4, 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-text">Quantum Annealing · 退火型量子電腦</span>
+      </div>
+      <h1>Computex <span>洽談策略</span><br>快速指南</h1>
+      <p class="hero-sub">每張卡片包含企業技術瓶頸分析、切入觀點與建議開場白<br>點擊展開完整策略 · 依優先順序排列</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">12</div>
+          <div class="hero-stat-label">目標企業</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">6</div>
+          <div class="hero-stat-label">產業類別</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">8</div>
+          <div class="hero-stat-label">最高優先夥伴</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4w</div>
+          <div class="hero-stat-label">建議 PoC 週期</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <div class="tip-card">
+        <div class="tip-label">📌 洽談黃金原則</div>
+        <div class="tip-text">永遠從<strong>「他們的痛點」</strong>開場，而非介紹 D-Wave 技術。主動提議 4 週 PoC，單一場景，可量化 KPI。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- FILTERS -->
+  <div class="filters-bar">
+    <span class="filters-label">篩選：</span>
+    <button class="filter-btn active" data-cat="all">全部</button>
+    <button class="filter-btn" data-cat="semi">半導體製造</button>
+    <button class="filter-btn" data-cat="ems">AI伺服器/EMS</button>
+    <button class="filter-btn" data-cat="ic">IC設計</button>
+    <button class="filter-btn" data-cat="infra">基礎設施</button>
+    <button class="filter-btn" data-cat="cloud">雲端/電信</button>
+  </div>
+
+  <!-- CARDS -->
+  <div class="card-grid" id="grid"></div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-text">D-Wave Quantum Inc. (NYSE: QBTS) · 洽談資料僅供內部使用 · Computex 2026</p>
+    <div class="footer-right">
+      <span class="footer-tag">Quantum Annealing</span>
+      <span class="footer-tag">Hybrid Solver</span>
+      <span class="footer-tag">QUBO</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const data = [
+  {
+    name: "台積電 TSMC",
+    abbr: "TSMC",
+    sector: "晶圓製造",
+    cat: "semi",
+    priority: "high",
+    avatarBg: "#EBF0FF", avatarColor: "#1A56F0",
+    bottleneck: "EUV 機台稼動率與 CoWoS 先進封裝產能受限，多條生產線同時衝量導致排程衝突；N3/N2 製程良率調參仍高度仰賴人工實驗，搜尋空間已超越傳統 APS 有效範圍。",
+    hook: "您的 CoWoS 與 EUV 機台每天都在做上百萬維的排程決策，傳統啟發式演算法在這個規模已碰壁——這正是量子退火的起點。",
+    angle: "以「晶圓廠機台排程最佳化」為核心場景：N5/N3 同廠混跑時，EUV 機台資源分配的組合空間已超越傳統求解器的有效範圍。D-Wave Advantage2 可在次秒級給出接近最佳解，直接提升 OEE（設備綜合效率）。",
+    bottleneckAngle: "CoWoS 產能吃緊 → 多層封裝站點排程是典型 QUBO 問題；良率製程參數調整 → 量子混合求解器可做高維製程視窗搜尋，縮短 DOE 實驗週期。",
+    poc: "以單一晶圓廠的機台批次排班資料做 4 週 PoC，對比當前 APS 系統的排程品質與換線次數，KPI 鎖定機台閒置率與換線頻率。",
+    opening: "「您們 N3 量產後機台排程的複雜度大概提升了多少倍？我們在歐洲有個類似 fab 的案例，量子退火讓換線次數降了 18%，可以分享細節給您們團隊評估。」",
+    tags: ["機台排程", "EUV配置", "良率優化", "CoWoS封裝"]
+  },
+  {
+    name: "鴻海 Foxconn",
+    abbr: "FoxC",
+    sector: "AI伺服器 / EMS",
+    cat: "ems",
+    priority: "high",
+    avatarBg: "#FEF0F0", avatarColor: "#C81E1E",
+    bottleneck: "AI 伺服器（GB200/GB300）出貨量暴增，全球多廠區產能協調、BOM 零件短缺動態調整與供應商交期不確定性是眼前最大瓶頸；毛利率提升壓力下，料號成本優化需求迫切。",
+    hook: "你們全球 40 個廠區每天在做的產能分配，其實是一道超大型組合最佳化問題，傳統 ERP 的求解品質已是天花板。",
+    angle: "鎖定「全球 AI 伺服器供應鏈韌性」角度：GB300 機櫃交期壓縮下，各廠區產能分配 + 缺料替代 + 物流路線是三層嵌套的組合問題，量子混合求解器可做跨層聯合優化，同時壓縮決策時間。",
+    bottleneckAngle: "毛利率偏低 → BOM 多料號替代成本最佳化；缺料風險 → 供應鏈場景模擬加速（蒙地卡羅 + 量子抽樣）；多廠排程 → 全局產能分配 QUBO 建模。",
+    poc: "選一條 AI 伺服器產線，以 BOM 替代料號組合最佳化為題，目標在指定成本上限下最大化出貨量，4 週出結果，預期提升出貨率 8-15%。",
+    opening: "「鴻海現在 AI 伺服器佔比這麼高，GB300 這個新平台的 BOM 複雜度應該比以前多幾倍——你們現在是怎麼做缺料時的替代組合決策的？」",
+    tags: ["供應鏈優化", "BOM成本", "全球產能配置", "缺料應變"]
+  },
+  {
+    name: "廣達 Quanta",
+    abbr: "QCmp",
+    sector: "AI伺服器 / EMS",
+    cat: "ems",
+    priority: "high",
+    avatarBg: "#FEF0F0", avatarColor: "#C81E1E",
+    bottleneck: "AI 伺服器已佔營收 40-50%，CSP 客戶（Google、Meta、Microsoft）交期要求嚴苛，液冷機櫃組裝良率與換線效率成為關鍵瓶頸；多客戶混線生產的排程複雜度持續升高。",
+    hook: "當你們同時生產三個 CSP 客戶不同規格的液冷機櫃，排程一旦出錯就是延誤億元訂單——這是量子退火最擅長的戰場。",
+    angle: "以「多客戶混線 AI 伺服器排程」為核心：廣達面對 Google/Meta/MS 三家 CSP 不同配置需求同時生產，換線時間、料件預備與 burn-in 資源是三維約束，傳統 APS 難以同步優化。",
+    bottleneckAngle: "液冷機櫃組裝站點排序 → QUBO 最短換線距離問題；CSP 交期優先權衝突 → 多目標量子退火求解；庫存預備 → 量子混合需求預測模型。",
+    poc: "以單一工廠的 AI 伺服器混線排程為題，比較量子退火 vs. 現行 APS 在「準時交貨率」與「換線次數」兩指標的差異，4 週完成。",
+    opening: "「廣達現在 AI 伺服器混線生產，不同 CSP 規格同時跑，請問排程的調整頻率大概是多久一次？我們有個解法可以讓這個頻率大幅降低。」",
+    tags: ["混線排程", "CSP交期", "液冷機櫃", "換線優化"]
+  },
+  {
+    name: "聯發科 MediaTek",
+    abbr: "MTK",
+    sector: "IC 設計",
+    cat: "ic",
+    priority: "high",
+    avatarBg: "#E6FAF4", avatarColor: "#0DAF7A",
+    bottleneck: "天璣系列 AP 與 AI 加速器在 EDA 驗證資源配置上競爭激烈；AI 模型壓縮（對 NPU 架構最佳化）需要大量超參數搜尋；IP 組合授權成本控管日趨複雜。",
+    hook: "你們每個新製程節點的 EDA 驗證資源分配，其實就是一個量子退火最適合解的組合最佳化問題。",
+    angle: "從「AI 模型加速器架構探索」切入：聯發科 NPU 設計需在面積、功耗、吞吐量三個目標間找 Pareto 最優解，這是高維多目標組合問題，量子退火在此具備明顯的搜尋空間優勢。",
+    bottleneckAngle: "EDA 回歸資源分配 → 量子排程求解器分配驗證機台；超參數優化 → Quantum-classical hybrid bayesian optimization；IP 成本組合 → QUBO 建模 IP bundle 選擇問題。",
+    poc: "與聯發科 AI 研究院合作，以 NPU 某一層的架構搜尋（MAC 陣列大小 × 記憶體層級 × 資料流）為 PoC 題目，4 週完成搜尋空間比較，量化找到最優解所需的迭代次數。",
+    opening: "「你們天璣新一代 NPU 在架構探索時，搜尋空間大概是幾個維度？我們有個量子混合求解器在這塊已有實際案例，想和你們的 AI 研究院聊聊。」",
+    tags: ["EDA資源配置", "NPU架構探索", "超參數優化", "IP組合"]
+  },
+  {
+    name: "日月光 ASE",
+    abbr: "ASE",
+    sector: "封裝測試",
+    cat: "semi",
+    priority: "high",
+    avatarBg: "#E0F5FB", avatarColor: "#0891B2",
+    bottleneck: "先進封裝（SiP、Chiplet、Fan-Out）訂單激增，測試機台稼動率與封裝站點排程複雜度大幅提升；2026 年先進封裝為主軸，產線配置彈性與轉換效率是核心挑戰。",
+    hook: "SiP 和 Chiplet 封裝的測試排程複雜度，跟傳統 QFP 完全不是同一個量級——這正是量子退火從理論走向實務的最佳入口。",
+    angle: "以「先進封裝測試機台排程」為主題：Chiplet 異質整合測試需要多步驟接觸、多溫度區段，測試機台與 DUT Board 的組合分配是典型 QUBO 問題，D-Wave 可在 sub-second 給出排程方案。",
+    bottleneckAngle: "測試機台稼動率不足 → 量子排程最佳化可提升 OEE 5-15%；封裝線配置彈性 → 混合整數規劃 + 量子退火聯合求解；產能利用率 → 需求波動下的動態產線配置。",
+    poc: "選擇一條 SiP 或 Fan-Out 產線，以「測試機台分配 + burn-in 資源排程」為題做 3 週 PoC，KPI 設定為機台閒置時間降低比例。",
+    opening: "「日月光在先進封裝這波需求裡，測試機台的排程頻率和複雜度應該大幅提升了，你們現在的排程工具在應付 Chiplet 測試時有沒有遇到瓶頸？」",
+    tags: ["測試機台排程", "SiP封裝", "Chiplet", "OEE提升"]
+  },
+  {
+    name: "台達電 Delta",
+    abbr: "Delta",
+    sector: "AI 基礎設施",
+    cat: "infra",
+    priority: "high",
+    avatarBg: "#FEF3C7", avatarColor: "#92400E",
+    bottleneck: "資料中心電源管理系統（UPS、PDU、散熱）在 AI 工作負載下面臨峰值需求劇烈波動；智慧電網能源交易與電費套利策略日趨複雜；工廠自動化多 AGV 路徑規劃問題隨規模成指數爆炸。",
+    hook: "資料中心的電力調度在 AI 工作負載下已經不是線性問題，每一個時段的電力分配都是量子退火最擅長的組合決策。",
+    angle: "雙線切入：(1) 資料中心能源調度——台達電 PowerLogic 系統管理多個電力節點，在電費峰谷差異下，量子退火即時給出最佳充放電與負載轉移策略；(2) 工廠 AGV 路徑規劃——多機器人衝突避免問題，D-Wave 在毫秒級給出無衝突最優路徑。",
+    bottleneckAngle: "AI GPU 工作負載峰值 → 量子混合時序預測模型；電費套利 → 充放電排程 QUBO；AGV 路徑衝突 → 量子圖最優著色問題；散熱系統優化 → 冷卻資源多節點分配最佳化。",
+    poc: "以台達電某客戶資料中心的電力調度資料做 PoC，目標：電費節省率 vs. 基線策略，2 週完成初步模型，預期節費 8-12%。",
+    opening: "「台達電的能源管理平台在面對 AI 資料中心這種劇烈的工作負載波動，目前的調度演算法是用什麼方法？量子退火在這塊有一些新的可能性，想和您分享。」",
+    tags: ["能源調度", "電費優化", "AGV路徑", "智慧電網"]
+  },
+  {
+    name: "中華電信 CHT",
+    abbr: "CHT",
+    sector: "雲端 / 電信",
+    cat: "cloud",
+    priority: "high",
+    avatarBg: "#F0EEFF", avatarColor: "#7C3AED",
+    bottleneck: "AI 雲端服務（CHT Cloud）GPU 資源調度效率不足；5G 基地台部署規劃在成本與覆蓋率間的取捨複雜；大規模網路流量管理面臨組合爆炸，傳統求解器難以在合理時間內給出優解。",
+    hook: "GPU 資源調度和 5G 基地台部署，都是你們現在最頭痛的組合最佳化問題，而這兩個正是量子退火的強項。",
+    angle: "雙線並進：(1) AI 雲端 GPU 資源配置——多租戶 GPU 叢集的工作排程是 NP-hard 問題，量子退火可提升 GPU 利用率；(2) 5G 基地台部署——在人口密度、成本與覆蓋率三重約束下，量子退火數分鐘給出最優部署方案。",
+    bottleneckAngle: "GPU 叢集利用率 → 量子任務排程求解器；基地台選址 → 設施選址 QUBO；網路流量管理 → 量子近似最佳化（QAOA 未來路線圖）。",
+    poc: "以 CHT Cloud 的 GPU 排程資料（匿名化）為輸入，比較量子退火 vs. 現行最佳適應演算法的 GPU 利用率，3 週 PoC，業界案例顯示可提升約 12%。",
+    opening: "「中華電信在 AI 雲端這塊，GPU 叢集的利用率大概是多少？我們在電信業有個量子排程案例，GPU 利用率提升了約 12%，想跟您分享細節。」",
+    tags: ["GPU調度", "5G部署", "網路流量", "雲端成本"]
+  },
+  {
+    name: "緯創 Wistron",
+    abbr: "Wist",
+    sector: "AI伺服器 / EMS",
+    cat: "ems",
+    priority: "med",
+    avatarBg: "#FEF0F0", avatarColor: "#C81E1E",
+    bottleneck: "AI 伺服器訂單快速成長，全球廠區（台灣、捷克、墨西哥）協調成本高；多幣別採購 BOM 與關稅不確定性下的成本最佳化是近期痛點。",
+    hook: "跨三洲廠區的產能分配加上關稅變數，這道題用傳統優化工具已經很難在合理時間內給出好答案。",
+    angle: "從「全球供應鏈風險管理」切入：美國關稅政策不確定性導致各廠區採購策略需要動態調整，量子退火可快速重新計算多廠區最佳分配方案（分鐘級 vs. 傳統工具的數小時）。",
+    bottleneckAngle: "多幣別 BOM 成本 → 量子組合最佳化在關稅情境下找最低成本組合；廠區協調 → 多廠排程 QUBO；庫存管理 → 量子混合需求預測。",
+    poc: "以關稅調整情境下的 BOM 替代方案選擇為 PoC，輸入為現有 BOM + 關稅矩陣，輸出為最低成本採購組合，1 週快速 demo 即可評估可行性。",
+    opening: "「緯創跨三個洲的廠區，面對最近美國關稅政策的不確定，你們重新計算最佳採購組合通常需要多久？我們有個工具可以把這個時間縮短到幾分鐘。」",
+    tags: ["供應鏈風險", "多廠協調", "關稅優化", "BOM管理"]
+  },
+  {
+    name: "英業達 Inventec",
+    abbr: "Inv",
+    sector: "AI伺服器 / EMS",
+    cat: "ems",
+    priority: "med",
+    avatarBg: "#FEF0F0", avatarColor: "#C81E1E",
+    bottleneck: "AI 伺服器與傳統伺服器混線生產，資源分配效率低；HPC 客戶（HPE、Dell）交期管理壓力大；料號數量龐大導致庫存最佳化困難。",
+    hook: "混線生產 AI 與傳統伺服器的排程，複雜度是乘法不是加法，這正是量子退火比傳統方法有明顯優勢的場景。",
+    angle: "以「AI/傳統伺服器混線排程」為題：英業達同時生產 AI 伺服器與傳統 x86 伺服器，兩類產品對同一批生產資源競爭，量子退火可在多目標約束下給出整體最優排程，避免 AI 訂單擠壓傳統訂單。",
+    bottleneckAngle: "混線資源競爭 → 多優先級排程 QUBO；料號庫存 → 量子混合庫存最佳化；HPC 交期 → 多客戶優先權動態調整求解。",
+    poc: "以某一週的訂單資料（含 AI/傳統伺服器混合）做排程模擬，KPI 為平均延誤天數，預期可縮短延誤 20% 以上。",
+    opening: "「英業達的 AI 和傳統伺服器混線生產，請問排程決策一般是提前幾天鎖定？我們有個方式可以讓這個窗口縮短，提高對急單的應變能力。」",
+    tags: ["混線排程", "HPC交期", "庫存優化", "急單應變"]
+  },
+  {
+    name: "和碩 Pegatron",
+    abbr: "Peg",
+    sector: "AI伺服器 / EMS",
+    cat: "ems",
+    priority: "med",
+    avatarBg: "#FEF0F0", avatarColor: "#C81E1E",
+    bottleneck: "從消費電子轉型 AI 伺服器過程中，產線配置靈活性不足；新產品導入（NPI）階段的製程參數最佳化耗時；供應商多元化下的採購策略複雜度大幅提升。",
+    hook: "NPI 階段的製程參數搜尋，傳統方法需要幾個月，量子退火可以把這個時間壓縮——這對你們轉型速度很關鍵。",
+    angle: "從「新產品導入效率」切入：和碩正在加速 AI 伺服器轉型，NPI 階段製程視窗搜尋（焊接溫度曲線、測試參數組合等）是典型高維組合問題，量子退火可大幅縮短實驗迭代週期。",
+    bottleneckAngle: "NPI 製程參數 → 量子混合 DOE（Design of Experiments）加速；產線配置 → 量子產線彈性分配；採購多元化 → 多供應商組合成本最佳化。",
+    poc: "以 AI 伺服器某組件的 NPI 製程參數搜尋為題，比較量子輔助搜尋與傳統 DOE 的實驗次數與時間，預期可減少約六成實驗次數。",
+    opening: "「和碩在 AI 伺服器 NPI 階段，製程參數的最佳化通常要跑幾輪實驗？我們有個量子輔助的方法可以減少大約六成的實驗次數，想和您驗證一下。」",
+    tags: ["NPI加速", "製程優化", "產線配置", "採購策略"]
+  },
+  {
+    name: "聯電 UMC",
+    abbr: "UMC",
+    sector: "晶圓製造",
+    cat: "semi",
+    priority: "med",
+    avatarBg: "#EBF0FF", avatarColor: "#1A56F0",
+    bottleneck: "成熟製程（28nm、40nm）面臨中國競爭壓力，需提升生產效率與良率；多客戶混線產量大，排程優化是每日挑戰，任何效率提升都直接轉化為競爭優勢。",
+    hook: "成熟製程競爭靠的是效率，而排程優化就是效率的乘數器——量子退火正好可以在這個戰場發揮作用。",
+    angle: "以「成熟製程混線效率提升」為主軸：聯電 28nm 混線面臨中國廠商低價競爭，透過量子排程最佳化壓縮換線時間、提升機台稼動率，是在不增加資本支出下提升競爭力的有效路徑。",
+    bottleneckAngle: "多客戶混線排程 → 量子退火最佳換線序列；良率改善 → 製程參數多變量優化；機台維護排程 → 預防性維護時間點最佳化，減少非計畫停機。",
+    poc: "選一條 28nm 混線，以換線次數最小化為 KPI，4 週 PoC 對比量子排程與現行排程系統，量化稼動率提升幅度。",
+    opening: "「聯電在成熟製程這塊，面對競爭壓力，排程效率的改善是否是近期的重點之一？我們有個方案可以在不改變設備的前提下提升整體稼動率。」",
+    tags: ["混線排程", "稼動率", "成熟製程", "換線優化"]
+  },
+  {
+    name: "日月光 (能源側)",
+    abbr: "ASE+",
+    sector: "封裝測試",
+    cat: "semi",
+    priority: "med",
+    avatarBg: "#E0F5FB", avatarColor: "#0891B2",
+    bottleneck: "廠區能耗大，電力成本占營運支出比例持續上升；測試設備 burn-in 耗電與冷卻資源分配效率不足。",
+    hook: "封測廠的電力成本直接吃掉毛利，量子退火在電力調度上的優化，是一個幾乎沒有導入阻力的起點。",
+    angle: "從「廠區能源成本最佳化」做為輔助切入：日月光封測廠電力消耗大，burn-in 設備排程與冷卻資源分配若能同步優化，在台電時間電價下每年可節省相當可觀的電費。",
+    bottleneckAngle: "Burn-in 設備排程 → 在離峰電費時段集中執行的 QUBO 排程；冷卻資源分配 → 多節點冷卻最佳化；綠電採購時序 → 電力期貨交易組合優化。",
+    poc: "以某廠區一個月的電力消耗資料做逆向分析，計算若採用量子退火調度可節省的電費，1 週完成試算報告。",
+    opening: "「日月光封測廠的電力成本大概佔營運成本幾個百分比？我們有個快速試算可以告訴你，量子優化在電力調度上可以幫你省多少，1 週就有答案。」",
+    tags: ["能源成本", "Burn-in調度", "冷卻優化", "電費套利"]
+  }
+];
+
+function renderCards(cat) {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  const filtered = cat === 'all' ? data : data.filter(d => d.cat === cat);
+  filtered.forEach((d, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.animationDelay = (i * 0.05) + 's';
+    card.innerHTML = `
+      <div class="card-top">
+        <div class="card-meta">
+          <div class="card-identity">
+            <div class="avatar" style="background:${d.avatarBg};color:${d.avatarColor}">${d.abbr}</div>
+            <div>
+              <div class="card-title">${d.name}</div>
+              <div class="card-sector">${d.sector}</div>
+            </div>
+          </div>
+          <div class="badge-group">
+            <span class="priority-badge ${d.priority === 'high' ? 'pri-high' : 'pri-med'}">${d.priority === 'high' ? '🔴 最高優先' : '🟡 次要優先'}</span>
+          </div>
+        </div>
+
+        <div class="hook-box">
+          <p>${d.hook}</p>
+        </div>
+
+        <div class="tags-row">
+          ${d.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+      </div>
+
+      <button class="card-toggle" onclick="toggleCard(this)">
+        展開完整策略 <span class="toggle-arrow">↓</span>
+      </button>
+
+      <div class="card-detail">
+        <div class="detail-sections">
+          <div class="detail-section bottleneck-box">
+            <div class="detail-label">技術瓶頸</div>
+            <div class="detail-body">${d.bottleneck}</div>
+          </div>
+
+          <div class="detail-section angle-box">
+            <div class="detail-label">切入觀點</div>
+            <div class="detail-body">${d.angle}</div>
+          </div>
+
+          <div class="detail-section angle-box">
+            <div class="detail-label">瓶頸對應方案</div>
+            <div class="detail-body">${d.bottleneckAngle}</div>
+          </div>
+
+          <div class="detail-section poc-box">
+            <div class="detail-label">建議 PoC</div>
+            <div class="detail-body">${d.poc}</div>
+          </div>
+
+          <div class="detail-section opening-box">
+            <div class="detail-label">建議開場白</div>
+            <div class="opening-line-text">${d.opening}</div>
+          </div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function toggleCard(btn) {
+  const card = btn.closest('.card');
+  const isOpen = card.classList.toggle('open');
+  btn.querySelector('.toggle-arrow').textContent = isOpen ? '↑' : '↓';
+  const label = btn.childNodes[0];
+  label.textContent = isOpen ? '收合 ' : '展開完整策略 ';
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderCards(btn.dataset.cat);
+  });
+});
+
+renderCards('all');
+</script>
+</body>
+</html>
